@@ -12,13 +12,7 @@ An elegant Keyboard library for iOS. simple, lightweight and standalone no sub-d
 #### [CocoaPods](https://cocoapods.org/)
 Add the following to your `Podfile`
 ````
-pod 'CommonKeyboard'
-````
-
-#### [Carthage](https://github.com/Carthage/Carthage)
-Add the following to your `Cartfile`
-````
-github "kaweerutk/CommonKeyboard"
+pod 'CommonKeyboard', :git => 'https://github.com/mobile-davinder/CommonKeyboard.git'
 ````
 
 ## Usage
@@ -127,7 +121,7 @@ Others
 - **Swift 4.2** or later
 
 ## Contact
-If you have any question or issue please create an [issue](https://github.com/kaweerutk/CommonKeyboard/issues/new)!
+If you have any question or issue please create an [issue](https://github.com/mobile-davinder/CommonKeyboard/issues/new)!
 
 ## License
-CommonKeyboard is released under the [MIT License](https://github.com/kaweerutk/CommonKeyboard/blob/master/LICENSE.md).
+CommonKeyboard is released under the [MIT License](https://github.com/mobile-davinder/CommonKeyboard/blob/master/LICENSE.md).

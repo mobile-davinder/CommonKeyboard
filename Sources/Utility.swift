@@ -53,16 +53,15 @@ internal class CKUtility: CKUtilityProtocol {
 }
 
 fileprivate extension UIWindow {
-    func getTopViewController(_ baseViewController: UIViewController? = nil) -> UIViewController? {
-        let vc = baseViewController ?? rootViewController
-        if let tabBarViewController = vc as? UITabBarController {
-            return getTopViewController(tabBarViewController.selectedViewController)
-        } else if let navigationController = vc as? UINavigationController {
-            return getTopViewController(navigationController.visibleViewController)
-        } else if let presentedViewController = vc?.presentedViewController {
-            return getTopViewController(presentedViewController)
+    func getTopViewController(_ baseViewController: UIViewController? = UIApplication.shared.windows.first?.rootViewController) -> UIViewController? {
+        if let nav = baseViewController as? UINavigationController {
+            return getTopViewController(nav.visibleViewController)
+        } else if let tab = baseViewController as? UITabBarController, let selected = tab.selectedViewController {
+            return getTopViewController(selected)
+        } else if let presented = baseViewController?.presentedViewController {
+            return getTopViewController(presented)
         }
-        return vc
+        return baseViewController
     }
 }
 
