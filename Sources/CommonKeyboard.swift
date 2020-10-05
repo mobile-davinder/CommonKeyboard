@@ -118,6 +118,9 @@ public class CommonKeyboard: NSObject {
             prevScrollInsetBottom = scrollContainer.contentInset.bottom
         }
         
+        // Reversed TableView Controller
+        guard scrollContainer.tag != 100 else { return }
+        
         let keyboardFrame = keyboardInfo.keyboardFrameEnd
         let targetFrame = window.convert(responsederView.frame, from: responsederView.superview)
         let targetBottomY = (targetFrame.origin.y + targetFrame.size.height + keyboardOffset)
